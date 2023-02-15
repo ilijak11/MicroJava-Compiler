@@ -1,6 +1,8 @@
 program MJProgram
 	int x, y;
 	char str[] = "ilija kulic";
+	char c = '\n';
+	char m = 'a';
 {
 	void main() {
 		
@@ -9,5 +11,9 @@ program MJProgram
 		
 		int a = x++ + y;
 		int b = y-- - x;
+		
+		//aaaa
+		
+		int b
 	}
 }

@@ -2,7 +2,8 @@
 bin/
 tmp/
 logs/
-*.class
+src/rs/ac/bg/etf/pp1/*.class
+src/rs/ac/bg/etf/pp1/util/*.class
 *.tmp
 *.bak
 *.swp
