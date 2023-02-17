@@ -29,7 +29,7 @@ public class MJTest {
 			log.info("Compiling source file: " + sourceCode.getAbsolutePath());
 			
 			br = new BufferedReader(new FileReader(sourceCode));
-			
+					
 			Yylex lexer = new Yylex(br);
 			Symbol currToken = null;
 			while ((currToken = lexer.next_token()).sym != sym.EOF) {

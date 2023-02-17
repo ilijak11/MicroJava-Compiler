@@ -9,6 +9,8 @@ program MJProgram
 		x = 517;
 		y = 31;
 		
+		_int3 k;
+		
 		int a = x++ + y;
 		int b = y-- - x;
 		
