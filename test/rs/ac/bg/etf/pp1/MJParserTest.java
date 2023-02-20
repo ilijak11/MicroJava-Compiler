@@ -12,7 +12,7 @@ import java_cup.runtime.Symbol;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import rs.ac.bg.etf.pp1.ast.Program;
+import rs.ac.bg.etf.pp1.ast.Prog;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
 
 public class MJParserTest {
@@ -37,7 +37,7 @@ public class MJParserTest {
 			MJParser p = new MJParser(lexer);
 	        Symbol s = p.parse();  //pocetak parsiranja
 	        
-	        Program prog = (Program)(s.value); 
+	        Prog prog = (Prog)(s.value); 
 			// ispis sintaksnog stabla
 			log.info(prog.toString(""));
 			log.info("===================================");

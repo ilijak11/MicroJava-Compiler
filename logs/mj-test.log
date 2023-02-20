@@ -1,63 +1,104 @@
-INFO  17:37:50,699 - Compiling source file: E:\RTI\7. semestar\PP1\proj\workspace\Compiler\test\test1.mj
-INFO  17:37:50,702 - #2 program
-INFO  17:37:50,702 - #50 MJProgram
-INFO  17:37:50,702 - #15 int
-INFO  17:37:50,702 - #50 x
-INFO  17:37:50,702 - #37 ,
-INFO  17:37:50,702 - #50 y
-INFO  17:37:50,702 - #35 ;
-INFO  17:37:50,702 - #16 char
-INFO  17:37:50,702 - #50 str
-INFO  17:37:50,702 - #41 [
-INFO  17:37:50,702 - #42 ]
-INFO  17:37:50,703 - #34 =
-INFO  17:37:50,703 - #52 ilija kulic"
-INFO  17:37:50,703 - #35 ;
-INFO  17:37:50,703 - #16 char
-INFO  17:37:50,703 - #50 c
-INFO  17:37:50,703 - #34 =
-INFO  17:37:50,703 - #53 
-
-INFO  17:37:50,703 - #35 ;
-INFO  17:37:50,703 - #16 char
-INFO  17:37:50,703 - #50 m
-INFO  17:37:50,704 - #34 =
-INFO  17:37:50,704 - #53 a
-INFO  17:37:50,704 - #35 ;
-INFO  17:37:50,704 - #43 {
-INFO  17:37:50,704 - #18 void
-INFO  17:37:50,704 - #50 main
-INFO  17:37:50,704 - #39 (
-INFO  17:37:50,704 - #40 )
-INFO  17:37:50,704 - #43 {
-INFO  17:37:50,704 - #50 x
-INFO  17:37:50,704 - #34 =
-INFO  17:37:50,704 - #51 517
-INFO  17:37:50,704 - #35 ;
-INFO  17:37:50,704 - #50 y
-INFO  17:37:50,704 - #34 =
-INFO  17:37:50,704 - #51 31
-INFO  17:37:50,704 - #35 ;
-INFO  17:37:50,704 - #50 int3
-INFO  17:37:50,704 - #50 k
-INFO  17:37:50,704 - #35 ;
-INFO  17:37:50,704 - #15 int
-INFO  17:37:50,704 - #50 a
-INFO  17:37:50,704 - #34 =
-INFO  17:37:50,705 - #50 x
-INFO  17:37:50,705 - #19 ++
-INFO  17:37:50,705 - #21 +
-INFO  17:37:50,705 - #50 y
-INFO  17:37:50,705 - #35 ;
-INFO  17:37:50,705 - #15 int
-INFO  17:37:50,705 - #50 b
-INFO  17:37:50,705 - #34 =
-INFO  17:37:50,705 - #50 y
-INFO  17:37:50,705 - #20 --
-INFO  17:37:50,705 - #22 -
-INFO  17:37:50,705 - #50 x
-INFO  17:37:50,705 - #35 ;
-INFO  17:37:50,705 - #15 int
-INFO  17:37:50,705 - #50 b
-INFO  17:37:50,705 - #44 }
-INFO  17:37:50,705 - #44 }
+INFO  18:13:49,256 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\program.mj
+INFO  18:13:49,264 - #2 program
+INFO  18:13:49,265 - #50 MJProgram
+INFO  18:13:49,265 - #15 int
+INFO  18:13:49,265 - #50 x
+INFO  18:13:49,266 - #37 ,
+INFO  18:13:49,266 - #50 y
+INFO  18:13:49,266 - #35 ;
+INFO  18:13:49,266 - #46 const
+INFO  18:13:49,267 - #16 char
+INFO  18:13:49,267 - #50 a
+INFO  18:13:49,267 - #34 =
+INFO  18:13:49,268 - #53 b
+INFO  18:13:49,268 - #37 ,
+INFO  18:13:49,268 - #50 k
+INFO  18:13:49,268 - #34 =
+INFO  18:13:49,268 - #53 c
+INFO  18:13:49,268 - #35 ;
+INFO  18:13:49,268 - #15 int
+INFO  18:13:49,268 - #50 arr1
+INFO  18:13:49,268 - #41 [
+INFO  18:13:49,268 - #42 ]
+INFO  18:13:49,268 - #37 ,
+INFO  18:13:49,277 - #50 scal
+INFO  18:13:49,277 - #37 ,
+INFO  18:13:49,277 - #50 arr2
+INFO  18:13:49,277 - #41 [
+INFO  18:13:49,277 - #42 ]
+INFO  18:13:49,277 - #35 ;
+INFO  18:13:49,277 - #43 {
+INFO  18:13:49,277 - #44 }
+INFO  18:13:49,278 - Prog(
+ MJProgram
+  GlobalDecls(
+    GlobalDecls(
+      GlobalDecls(
+        NoDecls(
+        ) [NoDecls]
+        GlobalVarDecl(
+          VarDecl(
+            TypeInt(
+            ) [TypeInt]
+            MultiVar(
+              SingleVar(
+                VarScalar(
+                 x
+                ) [VarScalar]
+              ) [SingleVar]
+              VarScalar(
+               y
+              ) [VarScalar]
+            ) [MultiVar]
+          ) [VarDecl]
+        ) [GlobalVarDecl]
+      ) [GlobalDecls]
+      GlobalConstDecl(
+        ConstVarDecl(
+          TypeChar(
+          ) [TypeChar]
+          MultiConstVar(
+            SingleConstVar(
+              ConstVarScalar(
+               a
+                CharConst(
+                 b
+                ) [CharConst]
+              ) [ConstVarScalar]
+            ) [SingleConstVar]
+            ConstVarScalar(
+             k
+              CharConst(
+               c
+              ) [CharConst]
+            ) [ConstVarScalar]
+          ) [MultiConstVar]
+        ) [ConstVarDecl]
+      ) [GlobalConstDecl]
+    ) [GlobalDecls]
+    GlobalVarDecl(
+      VarDecl(
+        TypeInt(
+        ) [TypeInt]
+        MultiVar(
+          MultiVar(
+            SingleVar(
+              VarArray(
+               arr1
+              ) [VarArray]
+            ) [SingleVar]
+            VarScalar(
+             scal
+            ) [VarScalar]
+          ) [MultiVar]
+          VarArray(
+           arr2
+          ) [VarArray]
+        ) [MultiVar]
+      ) [VarDecl]
+    ) [GlobalVarDecl]
+  ) [GlobalDecls]
+) [Prog]
+INFO  18:13:49,279 - ===================================
+INFO  18:13:49,279 -  Print count calls = 0
+INFO  18:13:49,280 -  Deklarisanih promenljivih ima = 0

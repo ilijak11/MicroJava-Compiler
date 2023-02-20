@@ -1,7 +1,8 @@
 program MJProgram
 	int x, y;
+	const char a = 'b', k = 'c';
+	
+	int arr1[], scal, arr2[];
 {
-	void main() {
-		
-	}
+
 }

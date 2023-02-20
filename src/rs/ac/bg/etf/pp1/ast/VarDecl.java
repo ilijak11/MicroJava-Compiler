@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/1/2023 19:39:5
+// 20/1/2023 18:13:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,12 +10,13 @@ public class VarDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private Type Type;
-    private String varName;
+    private Vars Vars;
 
-    public VarDecl (Type Type, String varName) {
+    public VarDecl (Type Type, Vars Vars) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.varName=varName;
+        this.Vars=Vars;
+        if(Vars!=null) Vars.setParent(this);
     }
 
     public Type getType() {
@@ -26,12 +27,12 @@ public class VarDecl implements SyntaxNode {
         this.Type=Type;
     }
 
-    public String getVarName() {
-        return varName;
+    public Vars getVars() {
+        return Vars;
     }
 
-    public void setVarName(String varName) {
-        this.varName=varName;
+    public void setVars(Vars Vars) {
+        this.Vars=Vars;
     }
 
     public SyntaxNode getParent() {
@@ -56,15 +57,18 @@ public class VarDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
+        if(Vars!=null) Vars.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
+        if(Vars!=null) Vars.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
+        if(Vars!=null) Vars.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -79,7 +83,10 @@ public class VarDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+varName);
+        if(Vars!=null)
+            buffer.append(Vars.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);
