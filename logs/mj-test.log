@@ -1,104 +1,156 @@
-INFO  18:13:49,256 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\program.mj
-INFO  18:13:49,264 - #2 program
-INFO  18:13:49,265 - #50 MJProgram
-INFO  18:13:49,265 - #15 int
-INFO  18:13:49,265 - #50 x
-INFO  18:13:49,266 - #37 ,
-INFO  18:13:49,266 - #50 y
-INFO  18:13:49,266 - #35 ;
-INFO  18:13:49,266 - #46 const
-INFO  18:13:49,267 - #16 char
-INFO  18:13:49,267 - #50 a
-INFO  18:13:49,267 - #34 =
-INFO  18:13:49,268 - #53 b
-INFO  18:13:49,268 - #37 ,
-INFO  18:13:49,268 - #50 k
-INFO  18:13:49,268 - #34 =
-INFO  18:13:49,268 - #53 c
-INFO  18:13:49,268 - #35 ;
-INFO  18:13:49,268 - #15 int
-INFO  18:13:49,268 - #50 arr1
-INFO  18:13:49,268 - #41 [
-INFO  18:13:49,268 - #42 ]
-INFO  18:13:49,268 - #37 ,
-INFO  18:13:49,277 - #50 scal
-INFO  18:13:49,277 - #37 ,
-INFO  18:13:49,277 - #50 arr2
-INFO  18:13:49,277 - #41 [
-INFO  18:13:49,277 - #42 ]
-INFO  18:13:49,277 - #35 ;
-INFO  18:13:49,277 - #43 {
-INFO  18:13:49,277 - #44 }
-INFO  18:13:49,278 - Prog(
+INFO  18:42:25,854 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\program.mj
+INFO  18:42:25,874 - #2 program
+INFO  18:42:25,874 - #47 MJProgram
+INFO  18:42:25,874 - #40 {
+INFO  18:42:25,874 - #47 int
+INFO  18:42:25,875 - #47 deli
+INFO  18:42:25,875 - #36 (
+INFO  18:42:25,876 - #37 )
+INFO  18:42:25,876 - #47 int
+INFO  18:42:25,877 - #47 a
+INFO  18:42:25,877 - #34 ,
+INFO  18:42:25,877 - #47 b
+INFO  18:42:25,877 - #32 ;
+INFO  18:42:25,877 - #40 {
+INFO  18:42:25,878 - #41 }
+INFO  18:42:25,878 - #15 void
+INFO  18:42:25,879 - #47 inc
+INFO  18:42:25,879 - #36 (
+INFO  18:42:25,879 - #47 int
+INFO  18:42:25,879 - #47 k
+INFO  18:42:25,879 - #37 )
+INFO  18:42:25,879 - #47 int
+INFO  18:42:25,879 - #47 a
+INFO  18:42:25,880 - #34 ,
+INFO  18:42:25,880 - #47 b
+INFO  18:42:25,880 - #32 ;
+INFO  18:42:25,881 - #40 {
+INFO  18:42:25,881 - #7 if
+INFO  18:42:25,881 - #36 (
+INFO  18:42:25,881 - #47 a
+INFO  18:42:25,881 - #23 ==
+INFO  18:42:25,881 - #47 b
+INFO  18:42:25,882 - #37 )
+INFO  18:42:25,882 - #40 {
+INFO  18:42:25,883 - #10 break
+INFO  18:42:25,883 - #32 ;
+INFO  18:42:25,883 - #10 break
+INFO  18:42:25,884 - #32 ;
+INFO  18:42:25,884 - #41 }
+INFO  18:42:25,884 - #41 }
+INFO  18:42:25,884 - #41 }
+INFO  18:42:25,887 - Prog(
  MJProgram
-  GlobalDecls(
-    GlobalDecls(
-      GlobalDecls(
-        NoDecls(
-        ) [NoDecls]
-        GlobalVarDecl(
+  NoDeclsGlobal(
+  ) [NoDeclsGlobal]
+  MethodDecls(
+    MethodDecls(
+      NoMethods(
+      ) [NoMethods]
+      TypedMethodDecl(
+        Type(
+         int
+        ) [Type]
+       deli
+        NoFormalParams(
+        ) [NoFormalParams]
+        VarDeclList(
+          NoVars(
+          ) [NoVars]
           VarDecl(
-            TypeInt(
-            ) [TypeInt]
+            Type(
+             int
+            ) [Type]
             MultiVar(
               SingleVar(
                 VarScalar(
-                 x
+                 a
                 ) [VarScalar]
               ) [SingleVar]
               VarScalar(
-               y
+               b
               ) [VarScalar]
             ) [MultiVar]
           ) [VarDecl]
-        ) [GlobalVarDecl]
-      ) [GlobalDecls]
-      GlobalConstDecl(
-        ConstVarDecl(
-          TypeChar(
-          ) [TypeChar]
-          MultiConstVar(
-            SingleConstVar(
-              ConstVarScalar(
-               a
-                CharConst(
-                 b
-                ) [CharConst]
-              ) [ConstVarScalar]
-            ) [SingleConstVar]
-            ConstVarScalar(
-             k
-              CharConst(
-               c
-              ) [CharConst]
-            ) [ConstVarScalar]
-          ) [MultiConstVar]
-        ) [ConstVarDecl]
-      ) [GlobalConstDecl]
-    ) [GlobalDecls]
-    GlobalVarDecl(
-      VarDecl(
-        TypeInt(
-        ) [TypeInt]
-        MultiVar(
+        ) [VarDeclList]
+        NoStmt(
+        ) [NoStmt]
+      ) [TypedMethodDecl]
+    ) [MethodDecls]
+    VoidMethodDecl(
+     inc
+      FormalParams(
+        SingleFormalParam(
+          FormalParam(
+            Type(
+             int
+            ) [Type]
+           k
+          ) [FormalParam]
+        ) [SingleFormalParam]
+      ) [FormalParams]
+      VarDeclList(
+        NoVars(
+        ) [NoVars]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
           MultiVar(
             SingleVar(
-              VarArray(
-               arr1
-              ) [VarArray]
+              VarScalar(
+               a
+              ) [VarScalar]
             ) [SingleVar]
             VarScalar(
-             scal
+             b
             ) [VarScalar]
           ) [MultiVar]
-          VarArray(
-           arr2
-          ) [VarArray]
-        ) [MultiVar]
-      ) [VarDecl]
-    ) [GlobalVarDecl]
-  ) [GlobalDecls]
+        ) [VarDecl]
+      ) [VarDeclList]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        UnmatchedStmt(
+          UnmatchedIfStmt(
+            SingleTermCondition(
+              SingleFactorTermCondition(
+                MultiFactor(
+                  ExprVar(
+                   a
+                  ) [ExprVar]
+                  RelOpEqual(
+                  ) [RelOpEqual]
+                  ExprVar(
+                   b
+                  ) [ExprVar]
+                ) [MultiFactor]
+              ) [SingleFactorTermCondition]
+            ) [SingleTermCondition]
+            MatchedStmt(
+              MultiStmt(
+                StmtList(
+                  StmtList(
+                    NoStmt(
+                    ) [NoStmt]
+                    MatchedStmt(
+                      BreakStmt(
+                      ) [BreakStmt]
+                    ) [MatchedStmt]
+                  ) [StmtList]
+                  MatchedStmt(
+                    BreakStmt(
+                    ) [BreakStmt]
+                  ) [MatchedStmt]
+                ) [StmtList]
+              ) [MultiStmt]
+            ) [MatchedStmt]
+          ) [UnmatchedIfStmt]
+        ) [UnmatchedStmt]
+      ) [StmtList]
+    ) [VoidMethodDecl]
+  ) [MethodDecls]
 ) [Prog]
-INFO  18:13:49,279 - ===================================
-INFO  18:13:49,279 -  Print count calls = 0
-INFO  18:13:49,280 -  Deklarisanih promenljivih ima = 0
+INFO  18:42:25,888 - ===================================
+INFO  18:42:25,890 -  Print count calls = 0
+INFO  18:42:25,890 -  Deklarisanih promenljivih ima = 0

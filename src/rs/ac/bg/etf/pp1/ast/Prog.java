@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/1/2023 18:13:27
+// 21/1/2023 18:42:17
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,11 +11,14 @@ public class Prog implements SyntaxNode {
     private int line;
     private String I1;
     private GlobalDeclList GlobalDeclList;
+    private MethodDeclList MethodDeclList;
 
-    public Prog (String I1, GlobalDeclList GlobalDeclList) {
+    public Prog (String I1, GlobalDeclList GlobalDeclList, MethodDeclList MethodDeclList) {
         this.I1=I1;
         this.GlobalDeclList=GlobalDeclList;
         if(GlobalDeclList!=null) GlobalDeclList.setParent(this);
+        this.MethodDeclList=MethodDeclList;
+        if(MethodDeclList!=null) MethodDeclList.setParent(this);
     }
 
     public String getI1() {
@@ -32,6 +35,14 @@ public class Prog implements SyntaxNode {
 
     public void setGlobalDeclList(GlobalDeclList GlobalDeclList) {
         this.GlobalDeclList=GlobalDeclList;
+    }
+
+    public MethodDeclList getMethodDeclList() {
+        return MethodDeclList;
+    }
+
+    public void setMethodDeclList(MethodDeclList MethodDeclList) {
+        this.MethodDeclList=MethodDeclList;
     }
 
     public SyntaxNode getParent() {
@@ -56,15 +67,18 @@ public class Prog implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(GlobalDeclList!=null) GlobalDeclList.accept(visitor);
+        if(MethodDeclList!=null) MethodDeclList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(GlobalDeclList!=null) GlobalDeclList.traverseTopDown(visitor);
+        if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(GlobalDeclList!=null) GlobalDeclList.traverseBottomUp(visitor);
+        if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -78,6 +92,12 @@ public class Prog implements SyntaxNode {
 
         if(GlobalDeclList!=null)
             buffer.append(GlobalDeclList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(MethodDeclList!=null)
+            buffer.append(MethodDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -63,9 +63,9 @@ import java_cup.runtime.Symbol;
 "foreach" 	{ return new_symbol(sym.FOREACH, yytext()); }
 "true" 		{ return new_symbol(sym.TRUE, yytext()); }
 "fasle" 	{ return new_symbol(sym.FALSE, yytext()); }
-"int" 	{ return new_symbol(sym.INT, yytext()); }
-"bool" 	{ return new_symbol(sym.BOOL, yytext()); }
-"char" 	{ return new_symbol(sym.CHAR, yytext()); }
+//"int" 	{ return new_symbol(sym.INT, yytext()); }
+//"bool" 	{ return new_symbol(sym.BOOL, yytext()); }
+//"char" 	{ return new_symbol(sym.CHAR, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
 "null" 	{ return new_symbol(sym.NULL, yytext()); }
 

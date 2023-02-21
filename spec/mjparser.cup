@@ -52,7 +52,8 @@ terminal IF, ELSE, CONTINUE, BREAK, RETURN;	/* control flow keywords */
 terminal CLASS, EXTENDS, NEW; 				/* class keywords */
 
 /* types */
-terminal INT, CHAR, BOOL, VOID;
+/*terminal INT, CHAR, BOOL;*/
+terminal VOID;
 
 /* operators */
 terminal INC, DEC, PLUS, MINUS, STAR, DIV, MOD;
@@ -77,13 +78,16 @@ nonterminal Matched, Unmatched;
 (ClassGlobalDecl) ClassDecl |
 */
 
-nonterminal Prog, GlobalDeclList, GlobalDecl, VarDecl, ConstDecl;
+nonterminal Prog, GlobalDeclList, GlobalDecl, VarDecl, ConstDecl, VarDecls;
 nonterminal Type, Var, Vars, ConstVar, ConstVars, ConstVal;
+nonterminal MethodDeclList, MethodDecl, FormalPar, FormalParList, FormalPars;
+nonterminal Statement, StatementList, MatchedStatement, UnmatchedStatement, Condition, ConditionTerm, ConditionFactor;
+nonterminal Expr, ReturnExpr, AssignOp, RelOp, AddOp, MulOp;
 
-Prog ::= (Prog) PROG IDENT GlobalDeclList LBRACE  RBRACE;
+Prog ::= (Prog) PROG IDENT GlobalDeclList LBRACE MethodDeclList RBRACE;
 
 GlobalDeclList ::= (GlobalDecls) GlobalDeclList GlobalDecl |
-				   (NoDecls) /* epsilon */
+				   (NoDeclsGlobal) /* epsilon */
 				   ;
 
 GlobalDecl ::= 	(GlobalVarDecl) VarDecl |
@@ -114,12 +118,87 @@ ConstVal ::= (NumericConst) NUMERIC_CONST |
 	     	 (BoolConstFalse) FALSE 
 	     	 ;
 	     	 
-Type ::= (TypeInt) INT |
-		 (TypeChar) CHAR |
-		 (TypeBool) BOOL |
-		 (TypeVoid) VOID |
-		 (TypeCustom) IDENT 
-		 ;
+Type ::= (Type) IDENT:typeName;
+
+
+MethodDeclList ::= (MethodDecls) MethodDeclList MethodDecl |
+				   (NoMethods) /* epsilon */
+				   ;
+
+VarDecls ::= (VarDeclList) VarDecls VarDecl |
+		     (NoVars) /* epsilon */
+		     ;
+
+MethodDecl ::= (TypedMethodDecl) Type:retType IDENT:methodName LPAREN FormalPars RPAREN VarDecls LBRACE StatementList RBRACE |
+			   (VoidMethodDecl) VOID IDENT:methodName LPAREN FormalPars RPAREN VarDecls LBRACE StatementList RBRACE
+			   ;
+
+FormalPars ::= (FormalParams) FormalParList |
+				 (NoFormalParams) /*epsilon*/
+				 ;
+
+FormalParList ::= (MultiFormalParam) FormalParList COMMA FormalPar |
+					(SingleFormalParam) FormalPar
+					;
+
+FormalPar ::= (FormalParam) Type:paramType IDENT:paramName;
+
+StatementList ::= (StmtList) StatementList Statement |
+				  (NoStmt) /* epsilon */
+				  ;
+
+Statement ::= (MatchedStmt) MatchedStatement |
+			  (UnmatchedStmt) UnmatchedStatement
+			  ;
+
+UnmatchedStatement ::= (UnmatchedIfStmt) IF LPAREN Condition RPAREN Statement |
+				       (UnmatchedIfElseStmt) IF LPAREN Condition RPAREN MatchedStatement ELSE UnmatchedStatement
+					   ;
+
+MatchedStatement ::= (WhileStmt) WHILE LPAREN Condition RPAREN MatchedStatement |
+					 (BreakStmt) BREAK SEMICOL |
+					 (ContinueStmt) CONTINUE SEMICOL |
+					 (ReturnStmt) RETURN ReturnExpr SEMICOL |
+					 (IfElseStmt) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement |
+					 (MultiStmt) LBRACE StatementList RBRACE
+					 ;
+
+ReturnExpr ::= (RetExpr) Expr |
+			   (NoRetExpr) /* epsilon */
+			   ;
+
+Condition ::= (MultiTermCondition) Condition OR ConditionTerm |
+			  (SingleTermCondition) ConditionTerm
+			  ;
+
+ConditionTerm ::= (MultiFactorTermCondition) ConditionTerm AND ConditionFactor |
+				  (SingleFactorTermCondition) ConditionFactor
+				  ;
+				  
+ConditionFactor ::= (MultiFactor) Expr RelOp Expr |
+					(SingleFactor) Expr
+					;
+					
+Expr ::= (ExprVar) IDENT:name;
+
+AssignOp ::= (AssignOp) EQUAL;
+
+RelOp ::= (RelOpEqual) REL_EQUAL |
+		  (RelOpNotEqual) REL_NOT_EQUAL |
+		  (RelOpGT) GT |
+		  (RelOpGTE) GTE |
+		  (RelOpLT) LT |
+		  (RelOpLTE) LTE
+		  ;
+
+AddOp ::= (AddOpPlus) PLUS |
+		  (AddOpMinus) MINUS
+		  ;
+
+MulOp ::= (MulOpTimes) STAR |
+		  (MulOpDiv) DIV |
+		  (MulOpMod) MOD
+		  ;
 
 		
 		

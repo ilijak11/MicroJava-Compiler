@@ -1,8 +1,17 @@
 program MJProgram
-	int x, y;
-	const char a = 'b', k = 'c';
-	
-	int arr1[], scal, arr2[];
 {
+
+	int deli()
+		int a,b;
+	{}
+	
+	void inc(int k)
+		int a,b;
+	{
+		if (a == b) {
+			break;
+			break;
+		}
+	}
 
 }
