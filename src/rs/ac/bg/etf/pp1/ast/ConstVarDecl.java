@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstVarDecl extends ConstDecl {
 
     private Type Type;
-    private ConstVars ConstVars;
+    private ConstVarList ConstVarList;
 
-    public ConstVarDecl (Type Type, ConstVars ConstVars) {
+    public ConstVarDecl (Type Type, ConstVarList ConstVarList) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.ConstVars=ConstVars;
-        if(ConstVars!=null) ConstVars.setParent(this);
+        this.ConstVarList=ConstVarList;
+        if(ConstVarList!=null) ConstVarList.setParent(this);
     }
 
     public Type getType() {
@@ -25,12 +25,12 @@ public class ConstVarDecl extends ConstDecl {
         this.Type=Type;
     }
 
-    public ConstVars getConstVars() {
-        return ConstVars;
+    public ConstVarList getConstVarList() {
+        return ConstVarList;
     }
 
-    public void setConstVars(ConstVars ConstVars) {
-        this.ConstVars=ConstVars;
+    public void setConstVarList(ConstVarList ConstVarList) {
+        this.ConstVarList=ConstVarList;
     }
 
     public void accept(Visitor visitor) {
@@ -39,18 +39,18 @@ public class ConstVarDecl extends ConstDecl {
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
-        if(ConstVars!=null) ConstVars.accept(visitor);
+        if(ConstVarList!=null) ConstVarList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
-        if(ConstVars!=null) ConstVars.traverseTopDown(visitor);
+        if(ConstVarList!=null) ConstVarList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
-        if(ConstVars!=null) ConstVars.traverseBottomUp(visitor);
+        if(ConstVarList!=null) ConstVarList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -65,8 +65,8 @@ public class ConstVarDecl extends ConstDecl {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ConstVars!=null)
-            buffer.append(ConstVars.toString("  "+tab));
+        if(ConstVarList!=null)
+            buffer.append(ConstVarList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

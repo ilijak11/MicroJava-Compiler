@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MultiConstVar extends ConstVars {
+public class MultiConstVar extends ConstVarList {
 
-    private ConstVars ConstVars;
+    private ConstVarList ConstVarList;
     private ConstVar ConstVar;
 
-    public MultiConstVar (ConstVars ConstVars, ConstVar ConstVar) {
-        this.ConstVars=ConstVars;
-        if(ConstVars!=null) ConstVars.setParent(this);
+    public MultiConstVar (ConstVarList ConstVarList, ConstVar ConstVar) {
+        this.ConstVarList=ConstVarList;
+        if(ConstVarList!=null) ConstVarList.setParent(this);
         this.ConstVar=ConstVar;
         if(ConstVar!=null) ConstVar.setParent(this);
     }
 
-    public ConstVars getConstVars() {
-        return ConstVars;
+    public ConstVarList getConstVarList() {
+        return ConstVarList;
     }
 
-    public void setConstVars(ConstVars ConstVars) {
-        this.ConstVars=ConstVars;
+    public void setConstVarList(ConstVarList ConstVarList) {
+        this.ConstVarList=ConstVarList;
     }
 
     public ConstVar getConstVar() {
@@ -38,18 +38,18 @@ public class MultiConstVar extends ConstVars {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ConstVars!=null) ConstVars.accept(visitor);
+        if(ConstVarList!=null) ConstVarList.accept(visitor);
         if(ConstVar!=null) ConstVar.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ConstVars!=null) ConstVars.traverseTopDown(visitor);
+        if(ConstVarList!=null) ConstVarList.traverseTopDown(visitor);
         if(ConstVar!=null) ConstVar.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ConstVars!=null) ConstVars.traverseBottomUp(visitor);
+        if(ConstVarList!=null) ConstVarList.traverseBottomUp(visitor);
         if(ConstVar!=null) ConstVar.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class MultiConstVar extends ConstVars {
         buffer.append(tab);
         buffer.append("MultiConstVar(\n");
 
-        if(ConstVars!=null)
-            buffer.append(ConstVars.toString("  "+tab));
+        if(ConstVarList!=null)
+            buffer.append(ConstVarList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

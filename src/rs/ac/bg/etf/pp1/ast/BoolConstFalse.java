@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class BoolConstFalse extends ConstVal {
+public class BoolConstFalse extends BoolConstVal {
 
     public BoolConstFalse () {
     }

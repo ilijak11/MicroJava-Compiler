@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,12 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class FormalParam extends FormalPar {
 
     private Type Type;
-    private String paramName;
+    private Var Var;
 
-    public FormalParam (Type Type, String paramName) {
+    public FormalParam (Type Type, Var Var) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.paramName=paramName;
+        this.Var=Var;
+        if(Var!=null) Var.setParent(this);
     }
 
     public Type getType() {
@@ -24,12 +25,12 @@ public class FormalParam extends FormalPar {
         this.Type=Type;
     }
 
-    public String getParamName() {
-        return paramName;
+    public Var getVar() {
+        return Var;
     }
 
-    public void setParamName(String paramName) {
-        this.paramName=paramName;
+    public void setVar(Var Var) {
+        this.Var=Var;
     }
 
     public void accept(Visitor visitor) {
@@ -38,15 +39,18 @@ public class FormalParam extends FormalPar {
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
+        if(Var!=null) Var.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
+        if(Var!=null) Var.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
+        if(Var!=null) Var.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -61,7 +65,10 @@ public class FormalParam extends FormalPar {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+paramName);
+        if(Var!=null)
+            buffer.append(Var.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);

@@ -1,37 +1,78 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class VarDecls implements SyntaxNode {
+public class VarDecls extends VarDeclList {
 
-    private SyntaxNode parent;
+    private VarDeclList VarDeclList;
+    private VarDecl VarDecl;
 
-    private int line;
-
-    public SyntaxNode getParent() {
-        return parent;
+    public VarDecls (VarDeclList VarDeclList, VarDecl VarDecl) {
+        this.VarDeclList=VarDeclList;
+        if(VarDeclList!=null) VarDeclList.setParent(this);
+        this.VarDecl=VarDecl;
+        if(VarDecl!=null) VarDecl.setParent(this);
     }
 
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
+    public VarDeclList getVarDeclList() {
+        return VarDeclList;
     }
 
-    public int getLine() {
-        return line;
+    public void setVarDeclList(VarDeclList VarDeclList) {
+        this.VarDeclList=VarDeclList;
     }
 
-    public void setLine(int line) {
-        this.line=line;
+    public VarDecl getVarDecl() {
+        return VarDecl;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void setVarDecl(VarDecl VarDecl) {
+        this.VarDecl=VarDecl;
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public void childrenAccept(Visitor visitor) {
+        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(VarDecl!=null) VarDecl.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(VarDecl!=null) VarDecl.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(VarDecl!=null) VarDecl.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("VarDecls(\n");
+
+        if(VarDeclList!=null)
+            buffer.append(VarDeclList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(VarDecl!=null)
+            buffer.append(VarDecl.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [VarDecls]");
+        return buffer.toString();
+    }
 }

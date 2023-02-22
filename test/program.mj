@@ -1,17 +1,47 @@
 program MJProgram
+	const char c = 'm';
+	const bool k = true;
+	
+	class Base1 {
+	}
+	
+	class Base2{
+		int a,b;
+		char c;
+	}
+	
+	class Base3{
+		int a;
+		{
+		Base3(int b, int c)
+		   int k;
+		{
+			print(b,2);
+		}
+		
+		void meth1(int a){
+		
+		}
+		}
+	}
 {
 
 	int deli()
 		int a,b;
 	{}
 	
-	void inc(int k)
+	void inc(int k[])
 		int a,b;
 	{
 		if (a == b) {
-			break;
-			break;
+			read(a.b.c[a].d);
+			print(a, 2);
+			a.b[m].foreach(s => print(s, 2););
 		}
+	}
+	
+	void  test(){
+		a.b = - 1 + (1 * 2 + a.c + a.m(1,2));
 	}
 
 }

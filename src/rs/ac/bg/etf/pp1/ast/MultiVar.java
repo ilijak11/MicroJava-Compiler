@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/1/2023 18:42:18
+// 22/1/2023 19:2:10
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MultiVar extends Vars {
+public class MultiVar extends VarList {
 
-    private Vars Vars;
+    private VarList VarList;
     private Var Var;
 
-    public MultiVar (Vars Vars, Var Var) {
-        this.Vars=Vars;
-        if(Vars!=null) Vars.setParent(this);
+    public MultiVar (VarList VarList, Var Var) {
+        this.VarList=VarList;
+        if(VarList!=null) VarList.setParent(this);
         this.Var=Var;
         if(Var!=null) Var.setParent(this);
     }
 
-    public Vars getVars() {
-        return Vars;
+    public VarList getVarList() {
+        return VarList;
     }
 
-    public void setVars(Vars Vars) {
-        this.Vars=Vars;
+    public void setVarList(VarList VarList) {
+        this.VarList=VarList;
     }
 
     public Var getVar() {
@@ -38,18 +38,18 @@ public class MultiVar extends Vars {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Vars!=null) Vars.accept(visitor);
+        if(VarList!=null) VarList.accept(visitor);
         if(Var!=null) Var.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Vars!=null) Vars.traverseTopDown(visitor);
+        if(VarList!=null) VarList.traverseTopDown(visitor);
         if(Var!=null) Var.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Vars!=null) Vars.traverseBottomUp(visitor);
+        if(VarList!=null) VarList.traverseBottomUp(visitor);
         if(Var!=null) Var.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class MultiVar extends Vars {
         buffer.append(tab);
         buffer.append("MultiVar(\n");
 
-        if(Vars!=null)
-            buffer.append(Vars.toString("  "+tab));
+        if(VarList!=null)
+            buffer.append(VarList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

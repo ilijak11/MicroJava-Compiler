@@ -1,60 +1,421 @@
-INFO  18:42:25,854 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\program.mj
-INFO  18:42:25,874 - #2 program
-INFO  18:42:25,874 - #47 MJProgram
-INFO  18:42:25,874 - #40 {
-INFO  18:42:25,874 - #47 int
-INFO  18:42:25,875 - #47 deli
-INFO  18:42:25,875 - #36 (
-INFO  18:42:25,876 - #37 )
-INFO  18:42:25,876 - #47 int
-INFO  18:42:25,877 - #47 a
-INFO  18:42:25,877 - #34 ,
-INFO  18:42:25,877 - #47 b
-INFO  18:42:25,877 - #32 ;
-INFO  18:42:25,877 - #40 {
-INFO  18:42:25,878 - #41 }
-INFO  18:42:25,878 - #15 void
-INFO  18:42:25,879 - #47 inc
-INFO  18:42:25,879 - #36 (
-INFO  18:42:25,879 - #47 int
-INFO  18:42:25,879 - #47 k
-INFO  18:42:25,879 - #37 )
-INFO  18:42:25,879 - #47 int
-INFO  18:42:25,879 - #47 a
-INFO  18:42:25,880 - #34 ,
-INFO  18:42:25,880 - #47 b
-INFO  18:42:25,880 - #32 ;
-INFO  18:42:25,881 - #40 {
-INFO  18:42:25,881 - #7 if
-INFO  18:42:25,881 - #36 (
-INFO  18:42:25,881 - #47 a
-INFO  18:42:25,881 - #23 ==
-INFO  18:42:25,881 - #47 b
-INFO  18:42:25,882 - #37 )
-INFO  18:42:25,882 - #40 {
-INFO  18:42:25,883 - #10 break
-INFO  18:42:25,883 - #32 ;
-INFO  18:42:25,883 - #10 break
-INFO  18:42:25,884 - #32 ;
-INFO  18:42:25,884 - #41 }
-INFO  18:42:25,884 - #41 }
-INFO  18:42:25,884 - #41 }
-INFO  18:42:25,887 - Prog(
+INFO  19:03:31,527 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\program.mj
+INFO  19:03:31,551 - #2 program
+INFO  19:03:31,551 - #45 MJProgram
+INFO  19:03:31,551 - #43 const
+INFO  19:03:31,551 - #45 char
+INFO  19:03:31,551 - #45 c
+INFO  19:03:31,552 - #31 =
+INFO  19:03:31,552 - #48 m
+INFO  19:03:31,552 - #32 ;
+INFO  19:03:31,552 - #43 const
+INFO  19:03:31,553 - #45 bool
+INFO  19:03:31,553 - #45 k
+INFO  19:03:31,553 - #31 =
+INFO  19:03:31,553 - #49 true
+INFO  19:03:31,553 - #32 ;
+INFO  19:03:31,554 - #12 class
+INFO  19:03:31,554 - #45 Base1
+INFO  19:03:31,554 - #40 {
+INFO  19:03:31,554 - #41 }
+INFO  19:03:31,555 - #12 class
+INFO  19:03:31,555 - #45 Base2
+INFO  19:03:31,555 - #40 {
+INFO  19:03:31,564 - #45 int
+INFO  19:03:31,564 - #45 a
+INFO  19:03:31,564 - #34 ,
+INFO  19:03:31,564 - #45 b
+INFO  19:03:31,565 - #32 ;
+INFO  19:03:31,565 - #45 char
+INFO  19:03:31,565 - #45 c
+INFO  19:03:31,565 - #32 ;
+INFO  19:03:31,565 - #41 }
+INFO  19:03:31,565 - #12 class
+INFO  19:03:31,565 - #45 Base3
+INFO  19:03:31,565 - #40 {
+INFO  19:03:31,565 - #45 int
+INFO  19:03:31,565 - #45 a
+INFO  19:03:31,565 - #32 ;
+INFO  19:03:31,566 - #40 {
+INFO  19:03:31,566 - #45 Base3
+INFO  19:03:31,566 - #36 (
+INFO  19:03:31,566 - #45 int
+INFO  19:03:31,566 - #45 b
+INFO  19:03:31,566 - #34 ,
+INFO  19:03:31,566 - #45 int
+INFO  19:03:31,566 - #45 c
+INFO  19:03:31,566 - #37 )
+INFO  19:03:31,566 - #45 int
+INFO  19:03:31,566 - #45 k
+INFO  19:03:31,566 - #32 ;
+INFO  19:03:31,566 - #40 {
+INFO  19:03:31,566 - #3 print
+INFO  19:03:31,567 - #36 (
+INFO  19:03:31,567 - #45 b
+INFO  19:03:31,567 - #34 ,
+INFO  19:03:31,567 - #46 2
+INFO  19:03:31,567 - #37 )
+INFO  19:03:31,567 - #32 ;
+INFO  19:03:31,567 - #41 }
+INFO  19:03:31,568 - #15 void
+INFO  19:03:31,568 - #45 meth1
+INFO  19:03:31,568 - #36 (
+INFO  19:03:31,568 - #45 int
+INFO  19:03:31,568 - #45 a
+INFO  19:03:31,568 - #37 )
+INFO  19:03:31,568 - #40 {
+INFO  19:03:31,569 - #41 }
+INFO  19:03:31,569 - #41 }
+INFO  19:03:31,569 - #41 }
+INFO  19:03:31,569 - #40 {
+INFO  19:03:31,569 - #45 int
+INFO  19:03:31,569 - #45 deli
+INFO  19:03:31,569 - #36 (
+INFO  19:03:31,569 - #37 )
+INFO  19:03:31,569 - #45 int
+INFO  19:03:31,569 - #45 a
+INFO  19:03:31,569 - #34 ,
+INFO  19:03:31,570 - #45 b
+INFO  19:03:31,570 - #32 ;
+INFO  19:03:31,570 - #40 {
+INFO  19:03:31,570 - #41 }
+INFO  19:03:31,570 - #15 void
+INFO  19:03:31,570 - #45 inc
+INFO  19:03:31,570 - #36 (
+INFO  19:03:31,570 - #45 int
+INFO  19:03:31,570 - #45 k
+INFO  19:03:31,570 - #38 [
+INFO  19:03:31,570 - #39 ]
+INFO  19:03:31,570 - #37 )
+INFO  19:03:31,570 - #45 int
+INFO  19:03:31,570 - #45 a
+INFO  19:03:31,570 - #34 ,
+INFO  19:03:31,570 - #45 b
+INFO  19:03:31,570 - #32 ;
+INFO  19:03:31,570 - #40 {
+INFO  19:03:31,570 - #7 if
+INFO  19:03:31,570 - #36 (
+INFO  19:03:31,570 - #45 a
+INFO  19:03:31,570 - #23 ==
+INFO  19:03:31,570 - #45 b
+INFO  19:03:31,571 - #37 )
+INFO  19:03:31,571 - #40 {
+INFO  19:03:31,571 - #4 read
+INFO  19:03:31,571 - #36 (
+INFO  19:03:31,571 - #45 a
+INFO  19:03:31,571 - #35 .
+INFO  19:03:31,571 - #45 b
+INFO  19:03:31,571 - #35 .
+INFO  19:03:31,571 - #45 c
+INFO  19:03:31,572 - #38 [
+INFO  19:03:31,572 - #45 a
+INFO  19:03:31,572 - #39 ]
+INFO  19:03:31,572 - #35 .
+INFO  19:03:31,572 - #45 d
+INFO  19:03:31,572 - #37 )
+INFO  19:03:31,572 - #32 ;
+INFO  19:03:31,572 - #3 print
+INFO  19:03:31,572 - #36 (
+INFO  19:03:31,572 - #45 a
+INFO  19:03:31,572 - #34 ,
+INFO  19:03:31,572 - #46 2
+INFO  19:03:31,572 - #37 )
+INFO  19:03:31,572 - #32 ;
+INFO  19:03:31,572 - #45 a
+INFO  19:03:31,572 - #35 .
+INFO  19:03:31,572 - #45 b
+INFO  19:03:31,572 - #38 [
+INFO  19:03:31,572 - #45 m
+INFO  19:03:31,572 - #39 ]
+INFO  19:03:31,572 - #35 .
+INFO  19:03:31,572 - #6 foreach
+INFO  19:03:31,572 - #36 (
+INFO  19:03:31,572 - #45 s
+INFO  19:03:31,572 - #42 =>
+INFO  19:03:31,573 - #3 print
+INFO  19:03:31,573 - #36 (
+INFO  19:03:31,574 - #45 s
+INFO  19:03:31,574 - #34 ,
+INFO  19:03:31,574 - #46 2
+INFO  19:03:31,574 - #37 )
+INFO  19:03:31,574 - #32 ;
+INFO  19:03:31,574 - #37 )
+INFO  19:03:31,574 - #32 ;
+INFO  19:03:31,574 - #41 }
+INFO  19:03:31,574 - #41 }
+INFO  19:03:31,574 - #15 void
+INFO  19:03:31,574 - #45 test
+INFO  19:03:31,574 - #36 (
+INFO  19:03:31,574 - #37 )
+INFO  19:03:31,574 - #40 {
+INFO  19:03:31,574 - #45 a
+INFO  19:03:31,574 - #35 .
+INFO  19:03:31,574 - #45 b
+INFO  19:03:31,574 - #31 =
+INFO  19:03:31,574 - #19 -
+INFO  19:03:31,575 - #46 1
+INFO  19:03:31,575 - #18 +
+INFO  19:03:31,575 - #36 (
+INFO  19:03:31,575 - #46 1
+INFO  19:03:31,575 - #20 *
+INFO  19:03:31,576 - #46 2
+INFO  19:03:31,576 - #18 +
+INFO  19:03:31,576 - #45 a
+INFO  19:03:31,576 - #35 .
+INFO  19:03:31,576 - #45 c
+INFO  19:03:31,576 - #18 +
+INFO  19:03:31,576 - #45 a
+INFO  19:03:31,576 - #35 .
+INFO  19:03:31,576 - #45 m
+INFO  19:03:31,576 - #36 (
+INFO  19:03:31,576 - #46 1
+INFO  19:03:31,576 - #34 ,
+INFO  19:03:31,576 - #46 2
+INFO  19:03:31,576 - #37 )
+INFO  19:03:31,577 - #37 )
+INFO  19:03:31,577 - #32 ;
+INFO  19:03:31,577 - #41 }
+INFO  19:03:31,577 - #41 }
+INFO  19:03:31,579 - Prog(
  MJProgram
-  NoDeclsGlobal(
-  ) [NoDeclsGlobal]
+  GlobalDecls(
+    GlobalDecls(
+      GlobalDecls(
+        GlobalDecls(
+          GlobalDecls(
+            NoDeclsGlobal(
+            ) [NoDeclsGlobal]
+            GlobalConstDecl(
+              ConstVarDecl(
+                Type(
+                 char
+                ) [Type]
+                SingleConstVar(
+                  ConstVarScalar(
+                   c
+                    CharConst(
+                     m
+                    ) [CharConst]
+                  ) [ConstVarScalar]
+                ) [SingleConstVar]
+              ) [ConstVarDecl]
+            ) [GlobalConstDecl]
+          ) [GlobalDecls]
+          GlobalConstDecl(
+            ConstVarDecl(
+              Type(
+               bool
+              ) [Type]
+              SingleConstVar(
+                ConstVarScalar(
+                 k
+                  BoolConst(
+                    BoolConstTrue(
+                    ) [BoolConstTrue]
+                  ) [BoolConst]
+                ) [ConstVarScalar]
+              ) [SingleConstVar]
+            ) [ConstVarDecl]
+          ) [GlobalConstDecl]
+        ) [GlobalDecls]
+        GlobalClassDecl(
+          BaseClassNoMethodsDecl(
+           Base1
+            NoVars(
+            ) [NoVars]
+          ) [BaseClassNoMethodsDecl]
+        ) [GlobalClassDecl]
+      ) [GlobalDecls]
+      GlobalClassDecl(
+        BaseClassNoMethodsDecl(
+         Base2
+          VarDecls(
+            VarDecls(
+              NoVars(
+              ) [NoVars]
+              VarDecl(
+                Type(
+                 int
+                ) [Type]
+                MultiVar(
+                  SingleVar(
+                    VarScalar(
+                     a
+                    ) [VarScalar]
+                  ) [SingleVar]
+                  VarScalar(
+                   b
+                  ) [VarScalar]
+                ) [MultiVar]
+              ) [VarDecl]
+            ) [VarDecls]
+            VarDecl(
+              Type(
+               char
+              ) [Type]
+              SingleVar(
+                VarScalar(
+                 c
+                ) [VarScalar]
+              ) [SingleVar]
+            ) [VarDecl]
+          ) [VarDecls]
+        ) [BaseClassNoMethodsDecl]
+      ) [GlobalClassDecl]
+    ) [GlobalDecls]
+    GlobalClassDecl(
+      BaseClassWithMethodsDecl(
+       Base3
+        VarDecls(
+          NoVars(
+          ) [NoVars]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+            SingleVar(
+              VarScalar(
+               a
+              ) [VarScalar]
+            ) [SingleVar]
+          ) [VarDecl]
+        ) [VarDecls]
+        ConstructorDecl(
+         Base3
+          FormalParamList(
+            MultiFormalParam(
+              SingleFormalParam(
+                FormalParam(
+                  Type(
+                   int
+                  ) [Type]
+                  VarScalar(
+                   b
+                  ) [VarScalar]
+                ) [FormalParam]
+              ) [SingleFormalParam]
+              FormalParam(
+                Type(
+                 int
+                ) [Type]
+                VarScalar(
+                 c
+                ) [VarScalar]
+              ) [FormalParam]
+            ) [MultiFormalParam]
+          ) [FormalParamList]
+          VarDecls(
+            NoVars(
+            ) [NoVars]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              SingleVar(
+                VarScalar(
+                 k
+                ) [VarScalar]
+              ) [SingleVar]
+            ) [VarDecl]
+          ) [VarDecls]
+          StmtList(
+            NoStmt(
+            ) [NoStmt]
+            MatchedStmt(
+              PrintStmt(
+                PrintExprWidth(
+                  Expression(
+                    SingleTermExpression(
+                      SingleTerm(
+                        DesignatorFactor(
+                          VarDesignator(
+                           b
+                          ) [VarDesignator]
+                        ) [DesignatorFactor]
+                      ) [SingleTerm]
+                    ) [SingleTermExpression]
+                  ) [Expression]
+                 2
+                ) [PrintExprWidth]
+              ) [PrintStmt]
+            ) [MatchedStmt]
+          ) [StmtList]
+        ) [ConstructorDecl]
+        MethodDecls(
+          NoMethods(
+          ) [NoMethods]
+          VoidMethodDecl(
+           meth1
+            FormalParamList(
+              SingleFormalParam(
+                FormalParam(
+                  Type(
+                   int
+                  ) [Type]
+                  VarScalar(
+                   a
+                  ) [VarScalar]
+                ) [FormalParam]
+              ) [SingleFormalParam]
+            ) [FormalParamList]
+            NoVars(
+            ) [NoVars]
+            NoStmt(
+            ) [NoStmt]
+          ) [VoidMethodDecl]
+        ) [MethodDecls]
+      ) [BaseClassWithMethodsDecl]
+    ) [GlobalClassDecl]
+  ) [GlobalDecls]
   MethodDecls(
     MethodDecls(
-      NoMethods(
-      ) [NoMethods]
-      TypedMethodDecl(
-        Type(
-         int
-        ) [Type]
-       deli
-        NoFormalParams(
-        ) [NoFormalParams]
-        VarDeclList(
+      MethodDecls(
+        NoMethods(
+        ) [NoMethods]
+        TypedMethodDecl(
+          Type(
+           int
+          ) [Type]
+         deli
+          NoFormalParamList(
+          ) [NoFormalParamList]
+          VarDecls(
+            NoVars(
+            ) [NoVars]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              MultiVar(
+                SingleVar(
+                  VarScalar(
+                   a
+                  ) [VarScalar]
+                ) [SingleVar]
+                VarScalar(
+                 b
+                ) [VarScalar]
+              ) [MultiVar]
+            ) [VarDecl]
+          ) [VarDecls]
+          NoStmt(
+          ) [NoStmt]
+        ) [TypedMethodDecl]
+      ) [MethodDecls]
+      VoidMethodDecl(
+       inc
+        FormalParamList(
+          SingleFormalParam(
+            FormalParam(
+              Type(
+               int
+              ) [Type]
+              VarArray(
+               k
+              ) [VarArray]
+            ) [FormalParam]
+          ) [SingleFormalParam]
+        ) [FormalParamList]
+        VarDecls(
           NoVars(
           ) [NoVars]
           VarDecl(
@@ -72,85 +433,260 @@ INFO  18:42:25,887 - Prog(
               ) [VarScalar]
             ) [MultiVar]
           ) [VarDecl]
-        ) [VarDeclList]
-        NoStmt(
-        ) [NoStmt]
-      ) [TypedMethodDecl]
+        ) [VarDecls]
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          UnmatchedStmt(
+            UnmatchedIfStmt(
+              SingleTermCondition(
+                SingleFactorTermCondition(
+                  MultiFactor(
+                    Expression(
+                      SingleTermExpression(
+                        SingleTerm(
+                          DesignatorFactor(
+                            VarDesignator(
+                             a
+                            ) [VarDesignator]
+                          ) [DesignatorFactor]
+                        ) [SingleTerm]
+                      ) [SingleTermExpression]
+                    ) [Expression]
+                    RelOpEqual(
+                    ) [RelOpEqual]
+                    Expression(
+                      SingleTermExpression(
+                        SingleTerm(
+                          DesignatorFactor(
+                            VarDesignator(
+                             b
+                            ) [VarDesignator]
+                          ) [DesignatorFactor]
+                        ) [SingleTerm]
+                      ) [SingleTermExpression]
+                    ) [Expression]
+                  ) [MultiFactor]
+                ) [SingleFactorTermCondition]
+              ) [SingleTermCondition]
+              MatchedStmt(
+                MultiStmt(
+                  StmtList(
+                    StmtList(
+                      StmtList(
+                        NoStmt(
+                        ) [NoStmt]
+                        MatchedStmt(
+                          ReadStmt(
+                            DotDesignator(
+                              ArrayDesignator(
+                                DotDesignator(
+                                  DotDesignator(
+                                    VarDesignator(
+                                     a
+                                    ) [VarDesignator]
+                                   b
+                                  ) [DotDesignator]
+                                 c
+                                ) [DotDesignator]
+                                Expression(
+                                  SingleTermExpression(
+                                    SingleTerm(
+                                      DesignatorFactor(
+                                        VarDesignator(
+                                         a
+                                        ) [VarDesignator]
+                                      ) [DesignatorFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleTermExpression]
+                                ) [Expression]
+                              ) [ArrayDesignator]
+                             d
+                            ) [DotDesignator]
+                          ) [ReadStmt]
+                        ) [MatchedStmt]
+                      ) [StmtList]
+                      MatchedStmt(
+                        PrintStmt(
+                          PrintExprWidth(
+                            Expression(
+                              SingleTermExpression(
+                                SingleTerm(
+                                  DesignatorFactor(
+                                    VarDesignator(
+                                     a
+                                    ) [VarDesignator]
+                                  ) [DesignatorFactor]
+                                ) [SingleTerm]
+                              ) [SingleTermExpression]
+                            ) [Expression]
+                           2
+                          ) [PrintExprWidth]
+                        ) [PrintStmt]
+                      ) [MatchedStmt]
+                    ) [StmtList]
+                    MatchedStmt(
+                      ForeachStmt(
+                        ArrayDesignator(
+                          DotDesignator(
+                            VarDesignator(
+                             a
+                            ) [VarDesignator]
+                           b
+                          ) [DotDesignator]
+                          Expression(
+                            SingleTermExpression(
+                              SingleTerm(
+                                DesignatorFactor(
+                                  VarDesignator(
+                                   m
+                                  ) [VarDesignator]
+                                ) [DesignatorFactor]
+                              ) [SingleTerm]
+                            ) [SingleTermExpression]
+                          ) [Expression]
+                        ) [ArrayDesignator]
+                       s
+                        MatchedStmt(
+                          PrintStmt(
+                            PrintExprWidth(
+                              Expression(
+                                SingleTermExpression(
+                                  SingleTerm(
+                                    DesignatorFactor(
+                                      VarDesignator(
+                                       s
+                                      ) [VarDesignator]
+                                    ) [DesignatorFactor]
+                                  ) [SingleTerm]
+                                ) [SingleTermExpression]
+                              ) [Expression]
+                             2
+                            ) [PrintExprWidth]
+                          ) [PrintStmt]
+                        ) [MatchedStmt]
+                      ) [ForeachStmt]
+                    ) [MatchedStmt]
+                  ) [StmtList]
+                ) [MultiStmt]
+              ) [MatchedStmt]
+            ) [UnmatchedIfStmt]
+          ) [UnmatchedStmt]
+        ) [StmtList]
+      ) [VoidMethodDecl]
     ) [MethodDecls]
     VoidMethodDecl(
-     inc
-      FormalParams(
-        SingleFormalParam(
-          FormalParam(
-            Type(
-             int
-            ) [Type]
-           k
-          ) [FormalParam]
-        ) [SingleFormalParam]
-      ) [FormalParams]
-      VarDeclList(
-        NoVars(
-        ) [NoVars]
-        VarDecl(
-          Type(
-           int
-          ) [Type]
-          MultiVar(
-            SingleVar(
-              VarScalar(
-               a
-              ) [VarScalar]
-            ) [SingleVar]
-            VarScalar(
-             b
-            ) [VarScalar]
-          ) [MultiVar]
-        ) [VarDecl]
-      ) [VarDeclList]
+     test
+      NoFormalParamList(
+      ) [NoFormalParamList]
+      NoVars(
+      ) [NoVars]
       StmtList(
         NoStmt(
         ) [NoStmt]
-        UnmatchedStmt(
-          UnmatchedIfStmt(
-            SingleTermCondition(
-              SingleFactorTermCondition(
-                MultiFactor(
-                  ExprVar(
-                   a
-                  ) [ExprVar]
-                  RelOpEqual(
-                  ) [RelOpEqual]
-                  ExprVar(
-                   b
-                  ) [ExprVar]
-                ) [MultiFactor]
-              ) [SingleFactorTermCondition]
-            ) [SingleTermCondition]
-            MatchedStmt(
-              MultiStmt(
-                StmtList(
-                  StmtList(
-                    NoStmt(
-                    ) [NoStmt]
-                    MatchedStmt(
-                      BreakStmt(
-                      ) [BreakStmt]
-                    ) [MatchedStmt]
-                  ) [StmtList]
-                  MatchedStmt(
-                    BreakStmt(
-                    ) [BreakStmt]
-                  ) [MatchedStmt]
-                ) [StmtList]
-              ) [MultiStmt]
-            ) [MatchedStmt]
-          ) [UnmatchedIfStmt]
-        ) [UnmatchedStmt]
+        MatchedStmt(
+          DesignatorStmt(
+            AssignStmt(
+              DotDesignator(
+                VarDesignator(
+                 a
+                ) [VarDesignator]
+               b
+              ) [DotDesignator]
+              AssignOp(
+              ) [AssignOp]
+              NegatedExpression(
+                AddOpExpression(
+                  SingleTermExpression(
+                    SingleTerm(
+                      NumConstFactor(
+                       1
+                      ) [NumConstFactor]
+                    ) [SingleTerm]
+                  ) [SingleTermExpression]
+                  AddOpPlus(
+                  ) [AddOpPlus]
+                  SingleTerm(
+                    GroupedFactor(
+                      Expression(
+                        AddOpExpression(
+                          AddOpExpression(
+                            SingleTermExpression(
+                              MulOpTerm(
+                                SingleTerm(
+                                  NumConstFactor(
+                                   1
+                                  ) [NumConstFactor]
+                                ) [SingleTerm]
+                                MulOpTimes(
+                                ) [MulOpTimes]
+                                NumConstFactor(
+                                 2
+                                ) [NumConstFactor]
+                              ) [MulOpTerm]
+                            ) [SingleTermExpression]
+                            AddOpPlus(
+                            ) [AddOpPlus]
+                            SingleTerm(
+                              DesignatorFactor(
+                                DotDesignator(
+                                  VarDesignator(
+                                   a
+                                  ) [VarDesignator]
+                                 c
+                                ) [DotDesignator]
+                              ) [DesignatorFactor]
+                            ) [SingleTerm]
+                          ) [AddOpExpression]
+                          AddOpPlus(
+                          ) [AddOpPlus]
+                          SingleTerm(
+                            FuncCallFactor(
+                              DotDesignator(
+                                VarDesignator(
+                                 a
+                                ) [VarDesignator]
+                               m
+                              ) [DotDesignator]
+                              ActualParamList(
+                                MultiActualParam(
+                                  SingleActualParam(
+                                    Expression(
+                                      SingleTermExpression(
+                                        SingleTerm(
+                                          NumConstFactor(
+                                           1
+                                          ) [NumConstFactor]
+                                        ) [SingleTerm]
+                                      ) [SingleTermExpression]
+                                    ) [Expression]
+                                  ) [SingleActualParam]
+                                  Expression(
+                                    SingleTermExpression(
+                                      SingleTerm(
+                                        NumConstFactor(
+                                         2
+                                        ) [NumConstFactor]
+                                      ) [SingleTerm]
+                                    ) [SingleTermExpression]
+                                  ) [Expression]
+                                ) [MultiActualParam]
+                              ) [ActualParamList]
+                            ) [FuncCallFactor]
+                          ) [SingleTerm]
+                        ) [AddOpExpression]
+                      ) [Expression]
+                    ) [GroupedFactor]
+                  ) [SingleTerm]
+                ) [AddOpExpression]
+              ) [NegatedExpression]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [MatchedStmt]
       ) [StmtList]
     ) [VoidMethodDecl]
   ) [MethodDecls]
 ) [Prog]
-INFO  18:42:25,888 - ===================================
-INFO  18:42:25,890 -  Print count calls = 0
-INFO  18:42:25,890 -  Deklarisanih promenljivih ima = 0
+INFO  19:03:31,580 - ===================================
+INFO  19:03:31,581 -  Print count calls = 0
+INFO  19:03:31,581 -  Deklarisanih promenljivih ima = 0

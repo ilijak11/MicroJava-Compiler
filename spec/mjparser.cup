@@ -63,12 +63,14 @@ terminal SEMICOL, COL, COMMA, DOT, LPAREN, RPAREN, LSQUARE, RSQUARE, LBRACE, RBR
 
 /* const */
 terminal CONST;
-terminal TRUE, FALSE, NULL;  
+terminal NULL;  
 
 terminal String IDENT;
 terminal Integer NUMERIC_CONST;
 terminal String STR_CONST;
 terminal Character CHAR_CONST;
+terminal TRUE;
+terminal FALSE;
 /*
 nonterminal Program, VarDeclList, MethodDeclList, VarDecl, Type, MethodDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
@@ -78,11 +80,16 @@ nonterminal Matched, Unmatched;
 (ClassGlobalDecl) ClassDecl |
 */
 
-nonterminal Prog, GlobalDeclList, GlobalDecl, VarDecl, ConstDecl, VarDecls;
-nonterminal Type, Var, Vars, ConstVar, ConstVars, ConstVal;
+nonterminal Prog, GlobalDeclList, GlobalDecl, VarDecl, ConstDecl, VarDeclList;
+nonterminal Type, Var, VarList, ConstVar, ConstVarList, ConstVal;
 nonterminal MethodDeclList, MethodDecl, FormalPar, FormalParList, FormalPars;
 nonterminal Statement, StatementList, MatchedStatement, UnmatchedStatement, Condition, ConditionTerm, ConditionFactor;
-nonterminal Expr, ReturnExpr, AssignOp, RelOp, AddOp, MulOp;
+nonterminal Expr, ReturnExpr, PrintExpr, AssignOp, RelOp, AddOp, MulOp;
+nonterminal Factor, Term, BaseExpr;
+nonterminal Designator, DesignatorStatement, DesignatorStatementUnpackPart, DesignatorStatementUnpackList;
+nonterminal ActualParList, ActualPars;
+nonterminal BoolConstVal; 
+nonterminal ClassDecl, ConstructorDecl;
 
 Prog ::= (Prog) PROG IDENT GlobalDeclList LBRACE MethodDeclList RBRACE;
 
@@ -91,14 +98,23 @@ GlobalDeclList ::= (GlobalDecls) GlobalDeclList GlobalDecl |
 				   ;
 
 GlobalDecl ::= 	(GlobalVarDecl) VarDecl |
-		  		(GlobalConstDecl) ConstDecl
+		  		(GlobalConstDecl) ConstDecl |
+		  		(GlobalClassDecl) ClassDecl
 		  		;
+
+ClassDecl ::= (BaseClassNoMethodsDecl) CLASS IDENT:className LBRACE VarDeclList RBRACE |
+			  (BaseClassWithMethodsDecl) CLASS IDENT:className LBRACE VarDeclList LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE |
+			  (ExtendedClassNoMethodsDecl) CLASS IDENT:className EXTENDS Type:baseType LBRACE VarDeclList RBRACE |
+			  (ExtendedClassWithMethodsDecl) CLASS IDENT:className EXTENDS Type:baseType LBRACE VarDeclList LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE
+			  ;
+
+ConstructorDecl ::= (ConstructorDecl) IDENT:constructorName LPAREN FormalPars RPAREN VarDeclList LBRACE StatementList RBRACE;
 		  		
-VarDecl ::= (VarDecl) Type:typeName Vars SEMICOL;
+VarDecl ::= (VarDecl) Type:typeName VarList SEMICOL;
 
-ConstDecl ::= (ConstVarDecl) CONST Type:typeName ConstVars SEMICOL;
+ConstDecl ::= (ConstVarDecl) CONST Type:typeName ConstVarList SEMICOL;
 
-Vars ::= (MultiVar) Vars COMMA Var |
+VarList ::= (MultiVar) VarList COMMA Var |
 		 (SingleVar) Var
 		 ;
 
@@ -106,7 +122,7 @@ Var ::= (VarScalar) IDENT:varName |
 		(VarArray) IDENT:varName LSQUARE RSQUARE
 		;
 		
-ConstVars ::= (MultiConstVar) ConstVars COMMA ConstVar |
+ConstVarList ::= (MultiConstVar) ConstVarList COMMA ConstVar |
 			  (SingleConstVar) ConstVar
 			  ;
 		
@@ -114,34 +130,37 @@ ConstVar ::= (ConstVarScalar) IDENT:varName EQUAL ConstVal;
 
 ConstVal ::= (NumericConst) NUMERIC_CONST |
 			 (CharConst) CHAR_CONST |
-			 (BoolConstTrue) TRUE |
-	     	 (BoolConstFalse) FALSE 
+			 (BoolConst) BoolConstVal | 
 	     	 ;
 	     	 
 Type ::= (Type) IDENT:typeName;
+
+BoolConstVal ::= (BoolConstTrue) TRUE |
+				 (BoolConstFalse) FALSE
+				 ;
 
 
 MethodDeclList ::= (MethodDecls) MethodDeclList MethodDecl |
 				   (NoMethods) /* epsilon */
 				   ;
 
-VarDecls ::= (VarDeclList) VarDecls VarDecl |
-		     (NoVars) /* epsilon */
-		     ;
+VarDeclList ::= (VarDecls) VarDeclList VarDecl |
+		     	(NoVars) /* epsilon */
+		     	;
 
-MethodDecl ::= (TypedMethodDecl) Type:retType IDENT:methodName LPAREN FormalPars RPAREN VarDecls LBRACE StatementList RBRACE |
-			   (VoidMethodDecl) VOID IDENT:methodName LPAREN FormalPars RPAREN VarDecls LBRACE StatementList RBRACE
+MethodDecl ::= (TypedMethodDecl) Type:retType IDENT:methodName LPAREN FormalPars RPAREN VarDeclList LBRACE StatementList RBRACE |
+			   (VoidMethodDecl) VOID IDENT:methodName LPAREN FormalPars RPAREN VarDeclList LBRACE StatementList RBRACE
 			   ;
 
-FormalPars ::= (FormalParams) FormalParList |
-				 (NoFormalParams) /*epsilon*/
+FormalPars ::= (FormalParamList) FormalParList |
+				 (NoFormalParamList) /*epsilon*/
 				 ;
 
 FormalParList ::= (MultiFormalParam) FormalParList COMMA FormalPar |
 					(SingleFormalParam) FormalPar
 					;
 
-FormalPar ::= (FormalParam) Type:paramType IDENT:paramName;
+FormalPar ::= (FormalParam) Type:paramType Var:varName;
 
 StatementList ::= (StmtList) StatementList Statement |
 				  (NoStmt) /* epsilon */
@@ -155,17 +174,54 @@ UnmatchedStatement ::= (UnmatchedIfStmt) IF LPAREN Condition RPAREN Statement |
 				       (UnmatchedIfElseStmt) IF LPAREN Condition RPAREN MatchedStatement ELSE UnmatchedStatement
 					   ;
 
-MatchedStatement ::= (WhileStmt) WHILE LPAREN Condition RPAREN MatchedStatement |
+MatchedStatement ::= (DesignatorStmt) DesignatorStatement SEMICOL |
+					 (WhileStmt) WHILE LPAREN Condition RPAREN MatchedStatement |
 					 (BreakStmt) BREAK SEMICOL |
 					 (ContinueStmt) CONTINUE SEMICOL |
 					 (ReturnStmt) RETURN ReturnExpr SEMICOL |
+					 (ReadStmt) READ LPAREN Designator RPAREN SEMICOL |
+					 (PrintStmt) PRINT LPAREN PrintExpr RPAREN SEMICOL |
+					 (ForeachStmt) Designator DOT FOREACH LPAREN IDENT:name ARROW Statement RPAREN SEMICOL |
 					 (IfElseStmt) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement |
 					 (MultiStmt) LBRACE StatementList RBRACE
 					 ;
 
+DesignatorStatement ::= (AssignStmt) Designator AssignOp Expr |
+						(FuncCallStmt) Designator LPAREN ActualPars RPAREN |
+						(IncStmt) Designator INC |
+						(DecStmt) Designator DEC |
+						(UnpackStmt) LSQUARE DesignatorStatementUnpackList RSQUARE EQUAL Designator
+						;
+
+DesignatorStatementUnpackList ::= (UnpackList) DesignatorStatementUnpackList COMMA DesignatorStatementUnpackPart |
+								  (UnpackSingle) DesignatorStatementUnpackPart
+								  ;
+
+DesignatorStatementUnpackPart ::= (DesignatorPart) Designator |
+								  (NoDesignatorPart) /* epsilon */
+								  ;
+
+Designator ::= (DotDesignator) Designator DOT IDENT:varName |
+			   (ArrayDesignator) Designator LSQUARE Expr RSQUARE |
+			   (VarDesignator) IDENT:varName
+			   ;
+
 ReturnExpr ::= (RetExpr) Expr |
 			   (NoRetExpr) /* epsilon */
 			   ;
+			   
+PrintExpr ::= (PrintExprWidth) Expr COMMA NUMERIC_CONST:width |
+			  (PrintExprNoWidth) Expr
+			  ;
+
+ActualPars ::= (ActualParamList) ActualParList |
+			   (NoActualParamList) /*epsilon*/
+			   ;
+
+ActualParList ::= (MultiActualParam) ActualParList COMMA Expr |
+				  (SingleActualParam) Expr
+				  ;
+
 
 Condition ::= (MultiTermCondition) Condition OR ConditionTerm |
 			  (SingleTermCondition) ConditionTerm
@@ -179,8 +235,28 @@ ConditionFactor ::= (MultiFactor) Expr RelOp Expr |
 					(SingleFactor) Expr
 					;
 					
-Expr ::= (ExprVar) IDENT:name;
+Expr ::= (Expression) BaseExpr |
+		 (NegatedExpression) MINUS BaseExpr
+		 ;
 
+BaseExpr ::= (AddOpExpression) BaseExpr AddOp Term |
+			 (SingleTermExpression) Term
+			 ;
+
+Term ::= (MulOpTerm) Term MulOp Factor |
+	     (SingleTerm) Factor
+		 ;
+
+Factor ::= (DesignatorFactor) Designator |
+		   (FuncCallFactor) Designator LPAREN ActualPars RPAREN |
+		   (NumConstFactor) NUMERIC_CONST |
+		   (CharConstFactor) CHAR_CONST |
+		   (BoolConstFactor) BoolConstVal |
+		   (NewArrayFactor) NEW Type:objType LSQUARE Expr RSQUARE |
+		   (NewObjectFactor) NEW Type:objType LPAREN ActualPars RPAREN |
+		   (GroupedFactor) LPAREN Expr RPAREN
+		   ;
+		   
 AssignOp ::= (AssignOp) EQUAL;
 
 RelOp ::= (RelOpEqual) REL_EQUAL |
