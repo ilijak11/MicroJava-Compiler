@@ -43,5 +43,9 @@ program MJProgram
 	void  test(){
 		a.b = - 1 + (1 * 2 + a.c + a.m(1,2));
 	}
+	
+	void main(){
+		a = 3;
+	}
 
 }

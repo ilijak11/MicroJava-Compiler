@@ -1,0 +1,10 @@
+program Test
+	int a[];
+	const int b = 3;
+{
+	
+	void main(){
+		print(a[3]);
+	}
+
+}

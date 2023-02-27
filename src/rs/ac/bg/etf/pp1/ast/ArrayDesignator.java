@@ -1,28 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/1/2023 19:2:10
+// 27/1/2023 18:53:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ArrayDesignator extends Designator {
 
-    private Designator Designator;
+    private String arrayName;
     private Expr Expr;
 
-    public ArrayDesignator (Designator Designator, Expr Expr) {
-        this.Designator=Designator;
-        if(Designator!=null) Designator.setParent(this);
+    public ArrayDesignator (String arrayName, Expr Expr) {
+        this.arrayName=arrayName;
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public Designator getDesignator() {
-        return Designator;
+    public String getArrayName() {
+        return arrayName;
     }
 
-    public void setDesignator(Designator Designator) {
-        this.Designator=Designator;
+    public void setArrayName(String arrayName) {
+        this.arrayName=arrayName;
     }
 
     public Expr getExpr() {
@@ -38,18 +37,15 @@ public class ArrayDesignator extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Designator!=null) Designator.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Designator!=null) Designator.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Designator!=null) Designator.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,10 +55,7 @@ public class ArrayDesignator extends Designator {
         buffer.append(tab);
         buffer.append("ArrayDesignator(\n");
 
-        if(Designator!=null)
-            buffer.append(Designator.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
+        buffer.append(" "+tab+arrayName);
         buffer.append("\n");
 
         if(Expr!=null)

@@ -233,10 +233,16 @@ DesignatorStatementUnpackList ::= (UnpackList) DesignatorStatementUnpackList:D1 
 DesignatorStatementUnpackPart ::= (DesignatorPart) Designator:D1 {: RESULT=new DesignatorPart(D1); RESULT.setLine(D1left); :} |
 								  (NoDesignatorPart) {: RESULT=new NoDesignatorPart(); :} /* epsilon */
 								  ;
+/*
+ full spec
+Designator ::= (DotDesignator) Designator DOT IDENT:varName |
+			   (ArrayDesignator) Designator LSQUARE Expr RSQUARE |
+			   (VarDesignator) IDENT:varName
+			   ;
+*/
 
-Designator ::= (DotDesignator) Designator:D1 DOT IDENT:varName {: RESULT=new DotDesignator(D1, varName); RESULT.setLine(D1left); :} |
-			   (ArrayDesignator) Designator:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new ArrayDesignator(D1, E2); RESULT.setLine(D1left); :} |
-			   (VarDesignator) IDENT:varName {: RESULT=new VarDesignator(varName); RESULT.setLine(varNameleft); :}
+Designator ::= (VarDesignator) IDENT:varName {: RESULT=new VarDesignator(varName); RESULT.setLine(varNameleft); :} |
+			   (ArrayDesignator) IDENT:arrayName LSQUARE Expr:E1 RSQUARE {: RESULT=new ArrayDesignator(arrayName, E1); RESULT.setLine(arrayNameleft); :}
 			   ;
 
 ReturnExpr ::= (RetExpr) Expr:E1 {: RESULT=new RetExpr(E1); RESULT.setLine(E1left); :} |
@@ -286,7 +292,7 @@ Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); 
 		   (CharConstFactor) CHAR_CONST:C1 {: RESULT=new CharConstFactor(C1); RESULT.setLine(C1left); :} |
 		   (BoolConstFactor) BoolConstVal:B1 {: RESULT=new BoolConstFactor(B1); RESULT.setLine(B1left); :} |
 		   (NewArrayFactor) NEW Type:objType LSQUARE Expr:E1 RSQUARE {: RESULT=new NewArrayFactor(objType, E1); RESULT.setLine(objTypeleft); :} |
-		   (NewObjectFactor) NEW Type:objType LPAREN ActualPars:A1 RPAREN {: RESULT=new NewObjectFactor(objType, A1); RESULT.setLine(objTypeleft); :} |
+		   /*(NewObjectFactor) NEW Type:objType LPAREN ActualPars RPAREN | */
 		   (GroupedFactor) LPAREN Expr:E1 RPAREN {: RESULT=new GroupedFactor(E1); RESULT.setLine(E1left); :}
 		   ;
 		   

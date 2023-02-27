@@ -200,16 +200,10 @@ DesignatorStatementUnpackList ::= (UnpackList) DesignatorStatementUnpackList COM
 DesignatorStatementUnpackPart ::= (DesignatorPart) Designator |
 								  (NoDesignatorPart) /* epsilon */
 								  ;
-/*
- full spec
+
 Designator ::= (DotDesignator) Designator DOT IDENT:varName |
 			   (ArrayDesignator) Designator LSQUARE Expr RSQUARE |
 			   (VarDesignator) IDENT:varName
-			   ;
-*/
-
-Designator ::= (VarDesignator) IDENT:varName |
-			   (ArrayDesignator) IDENT:arrayName LSQUARE Expr RSQUARE
 			   ;
 
 ReturnExpr ::= (RetExpr) Expr |
@@ -259,7 +253,7 @@ Factor ::= (DesignatorFactor) Designator |
 		   (CharConstFactor) CHAR_CONST |
 		   (BoolConstFactor) BoolConstVal |
 		   (NewArrayFactor) NEW Type:objType LSQUARE Expr RSQUARE |
-		   /*(NewObjectFactor) NEW Type:objType LPAREN ActualPars RPAREN | */
+		   (NewObjectFactor) NEW Type:objType LPAREN ActualPars RPAREN |
 		   (GroupedFactor) LPAREN Expr RPAREN
 		   ;
 		   
