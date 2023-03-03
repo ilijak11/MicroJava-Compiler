@@ -91,7 +91,7 @@ nonterminal ActualParList, ActualPars;
 nonterminal BoolConstVal; 
 nonterminal ClassDecl, ConstructorDecl;
 
-Prog ::= (Prog) PROG IDENT GlobalDeclList LBRACE MethodDeclList RBRACE;
+Prog ::= (Prog) PROG IDENT:progName GlobalDeclList LBRACE MethodDeclList RBRACE;
 
 GlobalDeclList ::= (GlobalDecls) GlobalDeclList GlobalDecl |
 				   (NoDeclsGlobal) /* epsilon */
