@@ -5,6 +5,9 @@ program Test
 	
 	void main(){
 		print(a[3]);
+		
+		a[3] = b + 4;
 	}
+	
 
 }

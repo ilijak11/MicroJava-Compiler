@@ -1,34 +1,43 @@
-INFO  18:57:06,906 - Compiling source file: D:\RTI\pp1\PP1\proj\workspace\MJCompiler\test\parser_test.mj
-INFO  18:57:06,965 - #2 program
-INFO  18:57:06,966 - #45 Test
-INFO  18:57:06,966 - #45 int
-INFO  18:57:06,966 - #45 a
-INFO  18:57:06,967 - #38 [
-INFO  18:57:06,967 - #39 ]
-INFO  18:57:06,967 - #32 ;
-INFO  18:57:06,967 - #43 const
-INFO  18:57:06,968 - #45 int
-INFO  18:57:06,968 - #45 b
-INFO  18:57:06,969 - #31 =
-INFO  18:57:06,969 - #46 3
-INFO  18:57:06,969 - #32 ;
-INFO  18:57:06,969 - #40 {
-INFO  18:57:06,969 - #15 void
-INFO  18:57:06,970 - #45 main
-INFO  18:57:06,970 - #36 (
-INFO  18:57:06,970 - #37 )
-INFO  18:57:06,971 - #40 {
-INFO  18:57:06,971 - #3 print
-INFO  18:57:06,972 - #36 (
-INFO  18:57:06,972 - #45 a
-INFO  18:57:06,980 - #38 [
-INFO  18:57:06,980 - #46 3
-INFO  18:57:06,980 - #39 ]
-INFO  18:57:06,980 - #37 )
-INFO  18:57:06,981 - #32 ;
-INFO  18:57:06,981 - #41 }
-INFO  18:57:06,981 - #41 }
-INFO  18:57:06,985 - Prog(
+INFO  15:37:55,702 - Compiling source file: E:\RTI\7. semestar\PP1\proj\workspace\Compiler\test\parser_test.mj
+INFO  15:37:55,724 - #2 program
+INFO  15:37:55,725 - #45 Test
+INFO  15:37:55,725 - #45 int
+INFO  15:37:55,725 - #45 a
+INFO  15:37:55,725 - #38 [
+INFO  15:37:55,725 - #39 ]
+INFO  15:37:55,725 - #32 ;
+INFO  15:37:55,725 - #43 const
+INFO  15:37:55,726 - #45 int
+INFO  15:37:55,726 - #45 b
+INFO  15:37:55,726 - #31 =
+INFO  15:37:55,726 - #46 3
+INFO  15:37:55,726 - #32 ;
+INFO  15:37:55,726 - #40 {
+INFO  15:37:55,726 - #15 void
+INFO  15:37:55,727 - #45 main
+INFO  15:37:55,727 - #36 (
+INFO  15:37:55,727 - #37 )
+INFO  15:37:55,727 - #40 {
+INFO  15:37:55,727 - #3 print
+INFO  15:37:55,727 - #36 (
+INFO  15:37:55,727 - #45 a
+INFO  15:37:55,728 - #38 [
+INFO  15:37:55,728 - #46 3
+INFO  15:37:55,728 - #39 ]
+INFO  15:37:55,728 - #37 )
+INFO  15:37:55,728 - #32 ;
+INFO  15:37:55,728 - #45 a
+INFO  15:37:55,729 - #38 [
+INFO  15:37:55,729 - #46 3
+INFO  15:37:55,729 - #39 ]
+INFO  15:37:55,729 - #31 =
+INFO  15:37:55,729 - #45 b
+INFO  15:37:55,729 - #18 +
+INFO  15:37:55,729 - #46 4
+INFO  15:37:55,730 - #32 ;
+INFO  15:37:55,730 - #41 }
+INFO  15:37:55,730 - #41 }
+INFO  15:37:55,731 - Prog(
  Test
   GlobalDecls(
     GlobalDecls(
@@ -73,38 +82,80 @@ INFO  18:57:06,985 - Prog(
       NoVars(
       ) [NoVars]
       StmtList(
-        NoStmt(
-        ) [NoStmt]
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          MatchedStmt(
+            PrintStmt(
+              PrintExprNoWidth(
+                Expression(
+                  SingleTermExpression(
+                    SingleTerm(
+                      DesignatorFactor(
+                        ArrayDesignator(
+                         a
+                          Expression(
+                            SingleTermExpression(
+                              SingleTerm(
+                                NumConstFactor(
+                                 3
+                                ) [NumConstFactor]
+                              ) [SingleTerm]
+                            ) [SingleTermExpression]
+                          ) [Expression]
+                        ) [ArrayDesignator]
+                      ) [DesignatorFactor]
+                    ) [SingleTerm]
+                  ) [SingleTermExpression]
+                ) [Expression]
+              ) [PrintExprNoWidth]
+            ) [PrintStmt]
+          ) [MatchedStmt]
+        ) [StmtList]
         MatchedStmt(
-          PrintStmt(
-            PrintExprNoWidth(
+          DesignatorStmt(
+            AssignStmt(
+              ArrayDesignator(
+               a
+                Expression(
+                  SingleTermExpression(
+                    SingleTerm(
+                      NumConstFactor(
+                       3
+                      ) [NumConstFactor]
+                    ) [SingleTerm]
+                  ) [SingleTermExpression]
+                ) [Expression]
+              ) [ArrayDesignator]
+              AssignOp(
+              ) [AssignOp]
               Expression(
-                SingleTermExpression(
+                AddOpExpression(
+                  SingleTermExpression(
+                    SingleTerm(
+                      DesignatorFactor(
+                        VarDesignator(
+                         b
+                        ) [VarDesignator]
+                      ) [DesignatorFactor]
+                    ) [SingleTerm]
+                  ) [SingleTermExpression]
+                  AddOpPlus(
+                  ) [AddOpPlus]
                   SingleTerm(
-                    DesignatorFactor(
-                      ArrayDesignator(
-                       a
-                        Expression(
-                          SingleTermExpression(
-                            SingleTerm(
-                              NumConstFactor(
-                               3
-                              ) [NumConstFactor]
-                            ) [SingleTerm]
-                          ) [SingleTermExpression]
-                        ) [Expression]
-                      ) [ArrayDesignator]
-                    ) [DesignatorFactor]
+                    NumConstFactor(
+                     4
+                    ) [NumConstFactor]
                   ) [SingleTerm]
-                ) [SingleTermExpression]
+                ) [AddOpExpression]
               ) [Expression]
-            ) [PrintExprNoWidth]
-          ) [PrintStmt]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
         ) [MatchedStmt]
       ) [StmtList]
     ) [VoidMethodDecl]
   ) [MethodDecls]
 ) [Prog]
-INFO  18:57:06,986 - ===================================
-INFO  18:57:06,988 -  Print count calls = 0
-INFO  18:57:06,988 -  Deklarisanih promenljivih ima = 0
+INFO  15:37:55,731 - ===================================
+INFO  15:37:55,733 -  Print count calls = 0
+INFO  15:37:55,733 -  Deklarisanih promenljivih ima = 0

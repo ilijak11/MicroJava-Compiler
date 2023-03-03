@@ -183,7 +183,9 @@ MatchedStatement ::= (DesignatorStmt) DesignatorStatement SEMICOL |
 					 (PrintStmt) PRINT LPAREN PrintExpr RPAREN SEMICOL |
 					 (ForeachStmt) Designator DOT FOREACH LPAREN IDENT:name ARROW Statement RPAREN SEMICOL |
 					 (IfElseStmt) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement |
-					 (MultiStmt) LBRACE StatementList RBRACE
+					 (MultiStmt) LBRACE StatementList RBRACE |
+					 error SEMICOL:l 
+					 {: parser.report_error("sintaksna greska na liniji: " + lleft, null); :}
 					 ;
 
 DesignatorStatement ::= (AssignStmt) Designator AssignOp Expr |

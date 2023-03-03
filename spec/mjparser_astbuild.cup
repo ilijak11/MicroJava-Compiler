@@ -216,7 +216,9 @@ MatchedStatement ::= (DesignatorStmt) DesignatorStatement:D1 SEMICOL {: RESULT=n
 					 (PrintStmt) PRINT LPAREN PrintExpr:P1 RPAREN SEMICOL {: RESULT=new PrintStmt(P1); RESULT.setLine(P1left); :} |
 					 (ForeachStmt) Designator:D1 DOT FOREACH LPAREN IDENT:name ARROW Statement:S2 RPAREN SEMICOL {: RESULT=new ForeachStmt(D1, name, S2); RESULT.setLine(D1left); :} |
 					 (IfElseStmt) IF LPAREN Condition:C1 RPAREN MatchedStatement:M2 ELSE MatchedStatement:M3 {: RESULT=new IfElseStmt(C1, M2, M3); RESULT.setLine(C1left); :} |
-					 (MultiStmt) LBRACE StatementList:S1 RBRACE {: RESULT=new MultiStmt(S1); RESULT.setLine(S1left); :}
+					 (MultiStmt) LBRACE StatementList:S1 RBRACE {: RESULT=new MultiStmt(S1); RESULT.setLine(S1left); :} |
+					 error SEMICOL:l 
+					 {: parser.report_error("sintaksna greska na liniji: " + lleft, null); :} {: RESULT=new MatchedStatementDerived1(); :}
 					 ;
 
 DesignatorStatement ::= (AssignStmt) Designator:D1 AssignOp:A2 Expr:E3 {: RESULT=new AssignStmt(D1, A2, E3); RESULT.setLine(D1left); :} |

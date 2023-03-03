@@ -5,9 +5,9 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NoDeclsGlobal extends GlobalDeclList {
+public class MatchedStatementDerived1 extends MatchedStatement {
 
-    public NoDeclsGlobal () {
+    public MatchedStatementDerived1 () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class NoDeclsGlobal extends GlobalDeclList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NoDeclsGlobal(\n");
+        buffer.append("MatchedStatementDerived1(\n");
 
         buffer.append(tab);
-        buffer.append(") [NoDeclsGlobal]");
+        buffer.append(") [MatchedStatementDerived1]");
         return buffer.toString();
     }
 }
